@@ -48,7 +48,7 @@ var midItem: String = ""
 var midAmmount: Int = 0
 
 var stageVar = 0
-
+var sales: Double = 0
 
 
 //First List
@@ -203,6 +203,11 @@ func checkOut(){
     print(cCups * cupsCost)
     print("Total Cost of All Items")
     print("$", cCereal * cerealCost + cMilk * milkCost + cSyrup * syrupCost + cCups * cupsCost)
+    sales += cCereal * cerealCost + cMilk * milkCost + cSyrup * syrupCost + cCups * cupsCost
+    cCereal = 0
+    cMilk = 0
+    cSyrup = 0
+    cCups = 0
     mainMenu()
 }
 
@@ -239,7 +244,13 @@ func restock(){
 }
 
 func report(){
-    
+    print("Remaining Stock")
+    print("Cereal Stock : ", cerealStock)
+    print("Milk Stock : ", milkStock)
+    print("Syrup Stock : ", syrupStock)
+    print("Cup Stock : ", cupsStock)
+    print("Total Sales : $", sales)
+    adminLogin()
 }
 
 func checkItems(){
